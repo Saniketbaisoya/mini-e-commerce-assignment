@@ -19,7 +19,7 @@ export default function App() {
       .then(data => {
         const updated = data.map(p => ({
           ...p,
-          stock: Math.floor(Math.random() * 5) + 1 // mock stock
+          stock: Math.floor(Math.random() * 5) + 1
         }));
         setProducts(updated);
       });
@@ -40,7 +40,7 @@ export default function App() {
     );
   };
 
-  // 🔹 Update / restore product stock (used by Cart)
+  // 🔹 Change stock safely (positive or negative)
   const updateProductStock = (id, change) => {
     setProducts(prev =>
       prev.map(p =>
@@ -49,6 +49,12 @@ export default function App() {
           : p
       )
     );
+  };
+
+  // 🔹 READ current stock (IMPORTANT)
+  const getProductStock = (id) => {
+    const product = products.find(p => p.id === id);
+    return product ? product.stock : 0;
   };
 
   // 🔹 Filters + search + sort together
@@ -103,11 +109,10 @@ export default function App() {
           cart={cart}
           removeFromCart={removeFromCart}
           updateQty={updateQty}
-          onUpdateStock={updateProductStock}   // ✅ FIXED
+          onUpdateStock={updateProductStock}
+          getProductStock={getProductStock}   // ✅ KEY FIX
         />
       </div>
     </div>
   );
 }
-
-
