@@ -8,7 +8,7 @@ This project was created as part of a frontend assignment to demonstrate **React
 
 ## 🚀 Live Demo
 
-🔗 **Live URL:** [https://<your-deployed-link-here>]((https://e-commerce-7751.netlify.app))
+🔗 **Live URL:** [https://<your-deployed-link-here>](https://e-commerce-7751.netlify.app)
 
 ---
 
