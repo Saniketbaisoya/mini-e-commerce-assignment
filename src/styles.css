@@ -1,0 +1,51 @@
+.container {
+  padding: 20px;
+}
+
+.layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.grid {
+  flex: 1;               
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.cart {
+  min-width: 280px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+  background: #fff;
+}
+
+.cart-item {
+  margin-bottom: 12px;
+}
+
+.cart-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filters input, .filters select {
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 12px;
+  background: #fff;
+}
