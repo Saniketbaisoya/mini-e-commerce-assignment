@@ -1,16 +1,98 @@
-# React + Vite
+# 🛒 Mini E-Commerce Application (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple single-page e-commerce frontend built using **React** and **Vite**, implementing product listing, filtering, sorting, and cart management with clean state handling.
 
-Currently, two official plugins are available:
+This project was created as part of a frontend assignment to demonstrate **React fundamentals, clean state management, and UI logic correctness**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Live Demo
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+🔗 **Live URL:** [https://<your-deployed-link-here>](https://mini-e-commerce1541.netlify.app)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧩 Features
+
+- 📦 Fetch products from public API
+- 🔍 Search products by title
+- 🗂 Filter products by category
+- ↕ Sort products by price (Low → High / High → Low)
+- 🛒 Add products to cart
+- ➕➖ Update product quantity from cart
+- 📉 Real-time stock management
+- 🚫 Prevent adding products beyond available stock
+- ♻ Restore stock when quantity is reduced or item is removed
+- 📌 Sticky cart sidebar for better UX
+- 💾 Cart persistence using `localStorage`
+- ⚠ Empty state handling (no products / empty cart)
+
+---
+
+## 🛠 Tech Stack
+
+- **React (Functional Components)**
+- **Vite**
+- **JavaScript (ES6+)**
+- **CSS (No UI libraries used)**
+
+---
+
+## 📂 Project Structure
+``` text
+src/
+├── components/
+│ ├── ProductCard.jsx
+│ ├── ProductList.jsx
+│ ├── Filters.jsx
+│ ├── Cart.jsx
+│ └── EmptyState.jsx
+│
+├── hooks/
+│ └── useCart.js
+│
+├── App.jsx
+├── main.jsx
+└── styles.css
+```
+
+---
+
+## 🔄 State Management Approach
+
+- **Product State**
+  - Maintains product list and available stock
+- **Cart State**
+  - Managed using `useReducer` inside a custom hook (`useCart`)
+- **Stock Synchronization**
+  - Adding to cart decreases product stock
+  - Reducing quantity restores stock
+  - Removing item restores full stock
+
+This separation ensures **consistent UI and predictable behavior**.
+
+---
+
+## 🌐 API Used
+
+- **Fake Store API**
+https://fakestoreapi.com/products
+
+---
+
+## Install dependencies
+
+```text
+npm install
+3️⃣ Run locally (development)
+npm run dev
+Open: http://localhost:5173
+```
+
+### 📦 Production Build
+
+```text
+npm run build
+This generates a dist/ folder used for deployment.
+```
+
